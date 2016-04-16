@@ -1,10 +1,11 @@
-package com.by_syk.pathcopier.util;
+package com.by_syk.lib.uri;
 
 import android.annotation.TargetApi;
 import android.content.ContentUris;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
@@ -13,6 +14,8 @@ import android.provider.MediaStore;
  * @author By_syk
  */
 public class UriAnalyser {
+    private final static int SDK = Build.VERSION.SDK_INT;
+
     /**
      * Since Marshmallow, it failed to read such uris like this:
      * content://downloads/my_downloads/2802
@@ -20,6 +23,10 @@ public class UriAnalyser {
      * <p/>
      * In some devices, it failed to read such uri like this (from OTG):
      * content://com.android.externalstorage.documents/76DD-33F3:APP/OSBuild.apk
+     *
+     * @param context The context to use.
+     * @param uri The file uri.
+     * @return The real path of the file.
      */
     @TargetApi(19)
     public static String getRealPath(Context context, Uri uri) {
@@ -32,7 +39,7 @@ public class UriAnalyser {
         final String AUTHORITY = uri.getAuthority();
         final String SCHEME = uri.getScheme();
 
-        if (C.SDK >= 19 && DocumentsContract.isDocumentUri(context, uri)) {
+        if (SDK >= 19 && DocumentsContract.isDocumentUri(context, uri)) {
             final String DOCUMENT_ID = DocumentsContract.getDocumentId(uri);
 
             switch (AUTHORITY) {
@@ -54,7 +61,7 @@ public class UriAnalyser {
                     }/* else {
                         //Maybe it's a file from OTG device.
                         //DEBUG
-                        result = String.format("/storage/%1$s/%2$s", 
+                        result = String.format("/storage/%1$s/%2$s",
                         PARAS[0], DOCUMENT_ID.substring(PARAS[0].length() + 1));
                     }*/
                     break;

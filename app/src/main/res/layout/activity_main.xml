@@ -19,7 +19,7 @@
             android:paddingLeft="@dimen/padding_content_dialog"
             android:paddingRight="@dimen/padding_content_dialog"
             style="@style/ripple"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/tv_path"
@@ -32,7 +32,7 @@
             android:paddingBottom="@dimen/padding_content_dialog"
             android:paddingLeft="@dimen/padding_content_dialog"
             android:paddingRight="@dimen/padding_content_dialog"
-            style="@style/ripple"/>
+            style="@style/ripple" />
 
     </RelativeLayout>
 

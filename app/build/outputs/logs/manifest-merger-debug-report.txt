@@ -19,6 +19,7 @@ ADDED from E:\Android\CoreProjects\PathCopier\app\src\main\AndroidManifest.xml:5
 		ADDED from E:\Android\CoreProjects\PathCopier\app\src\main\AndroidManifest.xml:5:22-77
 application
 ADDED from E:\Android\CoreProjects\PathCopier\app\src\main\AndroidManifest.xml:7:5-24:19
+MERGED from [PathCopier:urianalyser:unspecified] E:\Android\CoreProjects\PathCopier\app\build\intermediates\exploded-aar\PathCopier\urianalyser\unspecified\AndroidManifest.xml:11:5-53
 	android:label
 		ADDED from E:\Android\CoreProjects\PathCopier\app\src\main\AndroidManifest.xml:10:9-41
 	android:supportsRtl
@@ -53,6 +54,7 @@ ADDED from E:\Android\CoreProjects\PathCopier\app\src\main\AndroidManifest.xml:2
 		ADDED from E:\Android\CoreProjects\PathCopier\app\src\main\AndroidManifest.xml:20:23-45
 uses-sdk
 INJECTED from E:\Android\CoreProjects\PathCopier\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [PathCopier:urianalyser:unspecified] E:\Android\CoreProjects\PathCopier\app\build\intermediates\exploded-aar\PathCopier\urianalyser\unspecified\AndroidManifest.xml:7:5-9:41
 	android:targetSdkVersion
 		INJECTED from E:\Android\CoreProjects\PathCopier\app\src\main\AndroidManifest.xml
 		INJECTED from E:\Android\CoreProjects\PathCopier\app\src\main\AndroidManifest.xml

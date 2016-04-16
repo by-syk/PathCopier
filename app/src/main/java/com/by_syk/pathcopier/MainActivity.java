@@ -1,8 +1,8 @@
 package com.by_syk.pathcopier;
 
+import com.by_syk.lib.uri.UriAnalyser;
 import com.by_syk.pathcopier.util.C;
 import com.by_syk.pathcopier.util.ExtraUtil;
-import com.by_syk.pathcopier.util.UriAnalyser;
 
 import android.Manifest;
 import android.annotation.TargetApi;
@@ -134,7 +134,7 @@ public class MainActivity extends Activity {
 
     private boolean copy(Uri uri) {
         if (uri == null) {
-            // Toast.makeText(this, R.string.toast_failed, Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, R.string.toast_failed, Toast.LENGTH_SHORT).show();
             return false;
         }
 
@@ -143,7 +143,7 @@ public class MainActivity extends Activity {
 
         filePath = UriAnalyser.getRealPath(this, uri);
         if (TextUtils.isEmpty(filePath)) {
-            // Toast.makeText(this, R.string.toast_failed, Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, R.string.toast_failed, Toast.LENGTH_SHORT).show();
             return false;
         }
         Log.i(C.LOG_TAG, filePath);

@@ -8,5 +8,6 @@
     <string name="toast_copied_text">The text has been copied to clipboard.</string>
 
     <string name="path_null" translatable="false">null</string>
+    <string name="about"><u>About</u></string>
     
 </resources>
