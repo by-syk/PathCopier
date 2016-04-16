@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">复制路径到剪切板</string>
+    <string name="toast_copied_path">该文件路径已复制到剪切板</string>
+    <string name="toast_copied_text">文本已复制到剪切板</string>
+    <string name="toast_failed">复制失败！</string>
+</resources>

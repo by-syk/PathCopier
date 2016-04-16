@@ -1,0 +1,25 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "24.0.0 rc3"
+
+    defaultConfig {
+        applicationId "com.by_syk.pathcopier"
+        minSdkVersion 4
+        targetSdkVersion 23
+        versionCode 16041600
+        versionName "1.0.7.nightly"
+    }
+    
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+}

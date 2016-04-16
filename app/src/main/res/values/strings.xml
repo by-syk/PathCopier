@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Path Copier</string>
+    
+    <string name="toast_failed">Failed!</string>
+    <string name="toast_copied_path">Path of the file has been copied to clipboard.</string>
+    <string name="toast_copied_text">The text has been copied to clipboard.</string>
+
+    <string name="path_null" translatable="false">null</string>
+    
+</resources>

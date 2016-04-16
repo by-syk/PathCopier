@@ -1,0 +1,144 @@
+[
+    {
+        "outputFile": "E:\\Android\\CoreProjects\\PathCopier\\app\\build\\intermediates\\res\\merged\\debug\\values-v21\\values-v21.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 46,
+                    "endOffset": 97
+                },
+                "from": {
+                    "file": "E:\\Android\\CoreProjects\\PathCopier\\app\\src\\main\\res\\values-v21\\colors.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 157,
+                        "endColumn": 46,
+                        "endOffset": 199
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 102,
+                    "endColumn": 47,
+                    "endOffset": 145
+                },
+                "from": {
+                    "file": "E:\\Android\\CoreProjects\\PathCopier\\app\\src\\main\\res\\values-v21\\colors.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 56,
+                        "endColumn": 47,
+                        "endOffset": 99
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 150,
+                    "endColumn": 52,
+                    "endOffset": 198
+                },
+                "from": {
+                    "file": "E:\\Android\\CoreProjects\\PathCopier\\app\\src\\main\\res\\values-v21\\colors.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 104,
+                        "endColumn": 52,
+                        "endOffset": 152
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 203,
+                    "endColumn": 53,
+                    "endOffset": 252
+                },
+                "from": {
+                    "file": "E:\\Android\\CoreProjects\\PathCopier\\app\\src\\main\\res\\values-v21\\dimens.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 113,
+                        "endColumn": 53,
+                        "endOffset": 162
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 257,
+                    "endColumn": 56,
+                    "endOffset": 309
+                },
+                "from": {
+                    "file": "E:\\Android\\CoreProjects\\PathCopier\\app\\src\\main\\res\\values-v21\\dimens.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 56,
+                        "endColumn": 56,
+                        "endOffset": 108
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 314,
+                    "endLine": 11,
+                    "endColumn": 12,
+                    "endOffset": 614
+                },
+                "from": {
+                    "file": "E:\\Android\\CoreProjects\\PathCopier\\app\\src\\main\\res\\values-v21\\styles.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 56,
+                        "endLine": 7,
+                        "endColumn": 12,
+                        "endOffset": 356
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 619,
+                    "endLine": 14,
+                    "endColumn": 12,
+                    "endOffset": 749
+                },
+                "from": {
+                    "file": "E:\\Android\\CoreProjects\\PathCopier\\app\\src\\main\\res\\values-v21\\styles.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 366,
+                        "endLine": 11,
+                        "endColumn": 12,
+                        "endOffset": 496
+                    }
+                }
+            }
+        ]
+    }
+]

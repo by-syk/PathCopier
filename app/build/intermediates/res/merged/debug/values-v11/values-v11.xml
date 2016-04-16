@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="tap_color">#33b5e5</color>
+    <style name="app_theme" parent="@android:style/Theme.Holo.Dialog"/>
+    <style name="ripple">
+        <item name="android:background">@drawable/text_tap</item>
+    </style>
+</resources>

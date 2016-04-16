@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="app_theme" parent="@android:style/Theme.Material.Dialog">
+        <item name="android:colorPrimary">@color/color_primary</item>
+        <item name="android:colorPrimaryDark">@color/color_primary_dark</item>
+        <item name="android:colorAccent">@color/color_accent</item>
+    </style>
+    
+    <style name="ripple">
+        <item name="android:background">?android:attr/selectableItemBackgroundBorderless</item>
+    </style>
+
+</resources>

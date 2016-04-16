@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="padding_title_body_dialog">20dp</dimen>
+    <dimen name="padding_content_dialog">24dp</dimen>
+
+</resources>
