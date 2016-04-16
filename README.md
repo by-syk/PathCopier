@@ -15,6 +15,8 @@ Do you often need to copy file paths? If yes, the app is developed for you. Try 
 
 Notice that, the app has no icon in the Launcher.
 
+![screenshot.png](screenshot.png)
+
 
 ### Download APK
 
