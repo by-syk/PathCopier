@@ -8,7 +8,7 @@ android {
         applicationId "com.by_syk.pathcopier"
         minSdkVersion 4
         targetSdkVersion 23
-        versionCode 16041600
+        versionCode 16042200
         versionName "1.0.7.nightly"
     }
     

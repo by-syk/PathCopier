@@ -5,7 +5,7 @@
 
 ### Description
 
-Do you often need to copy file paths? If yes, the app is developed for you. Try it!
+Need to copy file paths often? If yes, the Android app is developed for you. Try it!
 
 
 ### How to use?

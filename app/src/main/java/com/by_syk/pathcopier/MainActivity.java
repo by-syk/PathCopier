@@ -13,6 +13,7 @@ import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -26,7 +27,8 @@ public class MainActivity extends Activity {
     private TextView tvPath;
     private TextView tvText;
 
-    private String uriPath = "";
+    //private String uriPath = "";
+    private SpannableStringBuilder ssbUriPath = new SpannableStringBuilder();
     private String filePath = "";
 
     private final int CLOSING_TIME = 1800;
@@ -78,9 +80,14 @@ public class MainActivity extends Activity {
             public void onClick(View p1) {
                 delay_closing = true;
 
-                if (!TextUtils.isEmpty(uriPath)) {
+                /*if (!TextUtils.isEmpty(uriPath)) {
                     tvPath.setText(String.format("%1$s\n\n->\n\n%2$s",
                             uriPath, TextUtils.isEmpty(filePath) ? "null" : filePath));
+                }*/
+                if (ssbUriPath.length() > 0) {
+                    tvPath.setText(ssbUriPath);
+                    tvPath.append(String.format("\n\n->\n\n%1$s",
+                            TextUtils.isEmpty(filePath) ? "null" : filePath));
                 }
             }
         });
@@ -138,8 +145,10 @@ public class MainActivity extends Activity {
             return false;
         }
 
-        uriPath = Uri.decode(uri.toString());
-        Log.i(C.LOG_TAG, uriPath);
+        //uriPath = UriAnalyser.getRawPath(uri);
+        //Log.i(C.LOG_TAG, uriPath);
+        ssbUriPath = UriAnalyser.getRawPathHighlighted(uri);
+        Log.i(C.LOG_TAG, ssbUriPath.toString());
 
         filePath = UriAnalyser.getRealPath(this, uri);
         if (TextUtils.isEmpty(filePath)) {

@@ -8,6 +8,10 @@
     <string name="toast_copied_text">The text has been copied to clipboard.</string>
 
     <string name="path_null" translatable="false">null</string>
-    <string name="about"><u>About</u></string>
-    
+    <!--<string name="about"><u>About</u></string>
+    <string name="about_desc">"Do you often need to copy file paths? If yes, the app is developed for you. Try it!
+\n> Source code on GitHub:
+https://github.com/by-syk/PathCopier
+Copyright &#169; 2016 By_syk. All rights reserved."</string>-->
+
 </resources>

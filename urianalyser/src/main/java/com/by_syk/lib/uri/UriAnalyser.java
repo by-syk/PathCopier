@@ -5,17 +5,25 @@ import android.content.ContentUris;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
+import android.text.style.ForegroundColorSpan;
 
 /**
+ * What's URI?
+ * <p/>
+ * URI = Scheme + (Authority) + Path + (Fragment)
+ * <p/>
+ * To know more, please visit
+ *     http://developer.android.com/reference/android/net/Uri.html
+ *
  * @author By_syk
  */
 public class UriAnalyser {
-    private final static int SDK = Build.VERSION.SDK_INT;
-
     /**
      * Since Marshmallow, it failed to read such uris like this:
      * content://downloads/my_downloads/2802
@@ -39,7 +47,7 @@ public class UriAnalyser {
         final String AUTHORITY = uri.getAuthority();
         final String SCHEME = uri.getScheme();
 
-        if (SDK >= 19 && DocumentsContract.isDocumentUri(context, uri)) {
+        if (C.SDK >= 19 && DocumentsContract.isDocumentUri(context, uri)) {
             final String DOCUMENT_ID = DocumentsContract.getDocumentId(uri);
 
             switch (AUTHORITY) {
@@ -73,7 +81,7 @@ public class UriAnalyser {
                  */
                 case "com.android.providers.downloads.documents": {
                     final Uri URI = ContentUris.withAppendedId(Uri
-                                    .parse("content://downloads/public_downloads"),
+                            .parse("content://downloads/public_downloads"),
                             Long.valueOf(DOCUMENT_ID));
                     result = getDataColumn(context, URI, null, null);
                     break;
@@ -105,7 +113,7 @@ public class UriAnalyser {
                 }
             }
         } else if ("content".equalsIgnoreCase(SCHEME)) {
-            //DEBUG
+            // DEBUG
             switch (AUTHORITY) {
                 /*
                  * Like this:
@@ -166,6 +174,71 @@ public class UriAnalyser {
         return result;
     }
 
+    /**
+     * @param uri The file uri.
+     * @return The raw path of the file.
+     */
+    public static String getRawPath(Uri uri) {
+        if (uri == null) {
+            return null;
+        }
+
+        // Or URLDecoder.decode(uri.toString())
+        return Uri.decode(uri.toString());
+    }
+
+    /**
+     * @param uri The file uri.
+     * @param is_light_bg If true, the text is showing on light background, or on dark background.
+     * @return The real path of the file with highlight color.
+     */
+    public static SpannableStringBuilder getRawPathHighlighted(Uri uri, boolean is_light_bg) {
+        SpannableStringBuilder ssb = new SpannableStringBuilder();
+        String uriPath = getRawPath(uri);
+        if (TextUtils.isEmpty(uriPath)) {
+            return ssb;
+        }
+        ssb.append(uriPath);
+
+        int[] colors_highlight = is_light_bg ? C.HL_LB : C.HL_DB;
+
+        String scheme = uri.getScheme();
+        String authority = uri.getAuthority();
+        String path = uri.getPath();
+
+        int index1 = 0;
+        int index2 = uriPath.length();
+        ssb.setSpan(new ForegroundColorSpan(colors_highlight[3]), index1, index2,
+                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        if (!TextUtils.isEmpty(scheme)) {
+            index2 = scheme.length();
+            ssb.setSpan(new ForegroundColorSpan(colors_highlight[0]), index1, index2,
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            index1 = index2 + 3;
+        }
+        if (!TextUtils.isEmpty(authority)) {
+            index2 = index1 + authority.length();
+            ssb.setSpan(new ForegroundColorSpan(colors_highlight[1]), index1, index2,
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            index1 = index2;
+        }
+        if (!TextUtils.isEmpty(path)) {
+            index2 = index1 + path.length();
+            ssb.setSpan(new ForegroundColorSpan(colors_highlight[2]), index1, index2,
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        }
+
+        return ssb;
+    }
+
+    /**
+     * @param uri The file uri.
+     * @return The real path of the file with highlight color.
+     */
+    public static SpannableStringBuilder getRawPathHighlighted(Uri uri) {
+        return getRawPathHighlighted(uri, false);
+    }
+
     private static String getDataColumn(Context context, Uri uri, String selection, String[] selection_args) {
         if (uri == null) {
             return null;
@@ -196,5 +269,31 @@ public class UriAnalyser {
         }
 
         return result;
+    }
+
+    /**
+     * @param uri The file uri.
+     * @return
+     */
+    public static String getUriDetails(Uri uri) {
+        if (uri == null) {
+            return "";
+        }
+
+        StringBuilder stringBuffer = new StringBuilder();
+
+        // Or URLDecoder.decode(uri.toString())
+        stringBuffer.append("Uri: ").append(Uri.decode(uri.toString()));
+        stringBuffer.append("\n\nScheme: ").append(uri.getScheme());
+        stringBuffer.append("\n\nAuthority: ").append(uri.getAuthority());
+        stringBuffer.append("\n\n* User info: ").append(uri.getUserInfo());
+        stringBuffer.append("\n\n* Host: ").append(uri.getHost());
+        stringBuffer.append("\n\n* Port: ").append(uri.getPort());
+        stringBuffer.append("\n\nPath: ").append(uri.getPath());
+        stringBuffer.append("\n\n* Path segments: ").append(uri.getPathSegments());
+        stringBuffer.append("\n\nQuery: ").append(uri.getQuery());
+        stringBuffer.append("\n\nFragment: ").append(uri.getFragment());
+
+        return stringBuffer.toString();
     }
 }
