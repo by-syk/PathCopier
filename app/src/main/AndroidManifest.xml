@@ -10,15 +10,31 @@
         android:label="@string/app_name"
         android:theme="@style/app_theme"
         android:supportsRtl="true">
+
+        <activity
+            android:name=".HelloActivity"
+            android:launchMode="singleTask"
+            android:configChanges="orientation|keyboardHidden|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
         
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize">
             <intent-filter android:icon="@drawable/ic_launcher">
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
                 <action android:name="android.intent.action.SEND" />
                 <data android:mimeType="*/*" />
             </intent-filter>
+            <!-- DEBUG -->
+            <!--<intent-filter android:icon="@drawable/ic_launcher">
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.VIEW" />
+                <data android:mimeType="*/*" />
+            </intent-filter>-->
         </activity>
         
     </application>

@@ -4,6 +4,7 @@
     <style name="app_theme" parent="@android:style/Theme.Holo.Dialog"/>
     
     <style name="ripple">
+        <item name="android:clickable">true</item>
         <item name="android:background">@drawable/text_tap</item>
     </style>
 

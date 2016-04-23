@@ -23,6 +23,8 @@ import android.widget.Toast;
 import android.view.View.OnTouchListener;
 import android.view.MotionEvent;
 
+import java.net.URL;
+
 public class MainActivity extends Activity {
     private TextView tvPath;
     private TextView tvText;
@@ -125,15 +127,23 @@ public class MainActivity extends Activity {
     }
 
     private void analyse() {
-        Bundle bundle = getIntent().getExtras();
-        if (bundle == null) {
-            copy((String) null);
-        } else {
-            final boolean IS_OK = copy((Uri) bundle.get(Intent.EXTRA_STREAM));
-            if (!IS_OK) {
-                // Maybe the object is text instead of file uri.
-                copy((String) bundle.get(Intent.EXTRA_TEXT));
+        Intent intent = getIntent();
+        switch (intent.getAction()) {
+            case Intent.ACTION_SEND: {
+                Bundle bundle = intent.getExtras();
+                if (bundle == null) {
+                    copy((String) null);
+                } else {
+                    final boolean IS_OK = copy((Uri) bundle.get(Intent.EXTRA_STREAM));
+                    if (!IS_OK) {
+                        // Maybe the object is text instead of file uri.
+                        copy((String) bundle.get(Intent.EXTRA_TEXT));
+                    }
+                }
             }
+            // DEBUG
+            /*case Intent.ACTION_VIEW:
+                copy(intent.getData());*/
         }
 
         handler.postDelayed(runnable, CLOSING_TIME);

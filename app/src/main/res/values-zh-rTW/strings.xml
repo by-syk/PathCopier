@@ -6,5 +6,12 @@
     <string name="toast_failed">複製失敗！</string>
     <string name="toast_copied_path">該檔案路徑已複製到剪貼簿</string>
     <string name="toast_copied_text">文字已複製到剪貼簿</string>
-    
+
+    <string name="about_desc">"關於 （版本：%1$s）
+\n你是否有這樣一種需求——快速複製任意檔案路徑到剪貼簿而苦於找不到相關應用程式，OK，用這個小小工具就行了！
+\n怎麼用？選擇任意檔案、共用（發送）到該程式，搞定！（注意，這個工具安裝後啟動圖示會消失，因為沒有必要顯示）
+\n訪問項目在 GitHub 上的原始碼：
+https://github.com/by-syk/PathCopier
+\nCopyright &#169; 2016 By_syk. All rights reserved."</string>
+
 </resources>

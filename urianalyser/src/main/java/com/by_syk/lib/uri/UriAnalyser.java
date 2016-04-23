@@ -132,6 +132,8 @@ public class UriAnalyser {
                  * Like this:
                  *     content://downloads/my_downloads/80
                  * ->  /storage/emulated/0/Download/OSBuild.apk
+                 *
+                 * "content://downloads/my_downloads/80" is from Chrome.
                  */
                 case "downloads": {
                     uri = Uri.parse(uri.toString().replace("content://downloads/my_downloads/",
@@ -271,10 +273,10 @@ public class UriAnalyser {
         return result;
     }
 
-    /**
+    /*/**
      * @param uri The file uri.
      * @return
-     */
+     *
     public static String getUriDetails(Uri uri) {
         if (uri == null) {
             return "";
@@ -295,5 +297,5 @@ public class UriAnalyser {
         stringBuffer.append("\n\nFragment: ").append(uri.getFragment());
 
         return stringBuffer.toString();
-    }
+    }*/
 }

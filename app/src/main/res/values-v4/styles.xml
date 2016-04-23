@@ -4,6 +4,7 @@
     <style name="app_theme" parent="@android:style/Theme.Dialog"/>
     
     <style name="ripple">
+        <item name="android:clickable">true</item>
         <item name="android:background">@android:drawable/list_selector_background</item>
     </style>
 
