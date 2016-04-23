@@ -28,7 +28,7 @@ Notice that, the app has no icon in the Launcher.
 
 ### Download AAR
 
-* Get it [here](urianalyser-1.0.1.aar "UriAnalyser").
+* Get the library [UriAnalyser](urianalyser-1.0.1.aar "UriAnalyser").
 
 
 ### Changelog
