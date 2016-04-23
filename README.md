@@ -26,6 +26,11 @@ Notice that, the app has no icon in the Launcher.
    * [here](com.by_syk.pathcopier.apk "Path Copier")
 
 
+### Download AAR
+
+* Get it [here](urianalyser-1.0.1.aar "UriAnalyser").
+
+
 ### Changelog
 
 * View it [here](CHANGELOG.txt "Changelog").
