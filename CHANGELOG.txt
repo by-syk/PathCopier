@@ -1,19 +1,19 @@
-v1.0.7 2016-04-23
-1. URI路径分段高亮。
-2. 开源。
+v1.1.0 2016-04-23
+1. Highlight the URI path.
+2. Open source.
 
 v1.0.6 2016-02-13
-1. 优化UI。
-2. 不只是文件路径，文本也能复制。
+1. Optimization.
+2. It's also OK to copy text.
 
 v1.0.4 2016-01-03
-1. 修复：读取某些文件管理器传递的文件时崩溃。
-2. 触摸以同时显示URI路径与文件路径。
-3. 修复：读取某些文件管理器传递的文件名含“:”的文件出错。
+1. Fixed: it crashes when launching from some file explorers.
+2. Fixed: it shows wrong path for files that contains ":".
+3. Tap to show file path and URI path.
 
 v1.0.2 2015-11-16
-1. 支持 Android Marshmallow。
-2. 短按以延迟关闭。
+1. Support Android Marshmallow.
+2. Tap to delay closing.
 
 v1.0.1 2015-11-15
-第一个版本。
+First release.
