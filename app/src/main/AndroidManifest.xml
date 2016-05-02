@@ -11,6 +11,7 @@
         android:theme="@style/app_theme"
         android:supportsRtl="true">
 
+        <!--android:excludeFromRecents="true"-->
         <activity
             android:name=".HelloActivity"
             android:launchMode="singleTask"

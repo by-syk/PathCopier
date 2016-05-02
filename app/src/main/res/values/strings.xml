@@ -6,6 +6,7 @@
     <string name="toast_failed">Failed!</string>
     <string name="toast_copied_path">Path of the file has been copied to clipboard.</string>
     <string name="toast_copied_text">The text has been copied to clipboard.</string>
+    <string name="toast_to_tap">[TIP]:\nTap to stop closing and view more.</string>
 
     <string name="path_null" translatable="false">null</string>
     <string name="about_desc">"About (%1$s)

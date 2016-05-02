@@ -1,5 +1,6 @@
 package com.by_syk.pathcopier;
 
+import com.by_syk.lib.storage.SP;
 import com.by_syk.lib.uri.UriAnalyser;
 import com.by_syk.pathcopier.util.C;
 import com.by_syk.pathcopier.util.ExtraUtil;
@@ -23,9 +24,9 @@ import android.widget.Toast;
 import android.view.View.OnTouchListener;
 import android.view.MotionEvent;
 
-import java.net.URL;
-
 public class MainActivity extends Activity {
+    private SP sp = null;
+
     private TextView tvPath;
     private TextView tvText;
 
@@ -33,21 +34,30 @@ public class MainActivity extends Activity {
     private SpannableStringBuilder ssbUriPath = new SpannableStringBuilder();
     private String filePath = "";
 
-    private final int CLOSING_TIME = 1800;
+    // Activity is running.
+    private boolean is_running = true;
 
-    private boolean delay_closing = false;
+    // Stop closing the Activity automatically.
+    private boolean is_tapped = false;
 
     private Runnable runnable = new Runnable() {
         @Override
         public void run() {
-            /*if (delay_closing) {
-                delay_closing = false;
-                handler.postDelayed(this, CLOSING_TIME * 2);
+            /*if (is_tapped) {
+                is_tapped = false;
+                handler.postDelayed(this, C.CLOSING_TIME * 2);
             } else {
                 finish();
             }*/
 
-            if (!delay_closing) {
+            if (is_running && !is_tapped) {
+                // Tell user how to view more info.
+                if (!sp.getBoolean("tapped") && sp.getLaunchTimes() / 3 == 1) {
+                    Toast.makeText(MainActivity.this, R.string.toast_to_tap,
+                            Toast.LENGTH_LONG).show();
+                    return;
+                }
+
                 finish();
             }
         }
@@ -75,12 +85,23 @@ public class MainActivity extends Activity {
         }
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        is_running = false;
+    }
+
     private void init() {
+        sp = new SP(this);
+
         tvPath = (TextView) findViewById(R.id.tv_path);
         tvPath.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View p1) {
-                delay_closing = true;
+                is_tapped = true;
+
+                sp.save("tapped", true);
 
                 /*if (!TextUtils.isEmpty(uriPath)) {
                     tvPath.setText(String.format("%1$s\n\n->\n\n%2$s",
@@ -98,7 +119,7 @@ public class MainActivity extends Activity {
         tvText.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View p1) {
-                delay_closing = true;
+                is_tapped = true;
             }
         });
 
@@ -106,7 +127,7 @@ public class MainActivity extends Activity {
         findViewById(R.id.sv_content).setOnTouchListener(new OnTouchListener() {
             @Override
             public boolean onTouch(View p1, MotionEvent p2) {
-                delay_closing = true;
+                is_tapped = true;
 
                 return false;
             }
@@ -146,7 +167,7 @@ public class MainActivity extends Activity {
                 copy(intent.getData());*/
         }
 
-        handler.postDelayed(runnable, CLOSING_TIME);
+        handler.postDelayed(runnable, C.CLOSING_TIME);
     }
 
     private boolean copy(Uri uri) {

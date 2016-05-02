@@ -8,8 +8,6 @@ import android.os.Build;
 class C {
     public final static int SDK = Build.VERSION.SDK_INT;
 
-    public final static String LOG_TAG = "PATH_COPIER";
-
     /*
      * Colors for highlighting on light background
      * From Android Studio (Darcula theme)

@@ -6,6 +6,7 @@
     <string name="toast_failed">复制失败！</string>
     <string name="toast_copied_path">该文件路径已复制到剪切板</string>
     <string name="toast_copied_text">文本已复制到剪切板</string>
+    <string name="toast_to_tap">小贴士：\n触摸以阻止关闭并可查看原路径</string>
 
     <string name="about_desc">"关于 （版本：%1$s）
 \n你是否有这样一种需求——快速复制任意文件路径到剪切板而苦于找不到相关应用，OK，用这个小小工具就行了！

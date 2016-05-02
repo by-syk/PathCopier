@@ -10,9 +10,5 @@ public class C {
 
     public final static String LOG_TAG = "PATH_COPIER";
 
-    /*
-     * Colors for highlighting from Android Studio (Darcula theme).
-     * Red, Green, Blue
-     */
-    public final static int[] COLORS = {0xffcc7832, 0xff629755, 0xff6897bb};
+    public static final int CLOSING_TIME = 1800; // 1.8s
 }
