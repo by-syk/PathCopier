@@ -62,7 +62,7 @@ public class MainActivity extends Activity {
             }
         }
     };
-    private Handler handler = new Handler();
+    private static Handler handler = new Handler();
 
     @TargetApi(23)
     @Override
@@ -161,10 +161,27 @@ public class MainActivity extends Activity {
                         copy((String) bundle.get(Intent.EXTRA_TEXT));
                     }
                 }
+                break;
             }
-            // DEBUG
-            /*case Intent.ACTION_VIEW:
-                copy(intent.getData());*/
+            // TODO DEBUG
+//            case Intent.ACTION_VIEW:
+//                copy(intent.getData());
+//
+//                /*if (C.SDK >= 17) {
+//                    Uri tempUri = getIntent().getParcelableExtra(Intent.EXTRA_ORIGINATING_URI);
+//                    if (tempUri != null) {
+//                        Toast.makeText(MainActivity.this, "Analyse EXTRA_ORIGINATING_URI.",
+//                                Toast.LENGTH_SHORT).show();
+//                    } else {
+//                        tempUri = getIntent().getParcelableExtra(Intent.EXTRA_REFERRER);
+//
+//                        Toast.makeText(MainActivity.this, "Analyse EXTRA_REFERRER.",
+//                                Toast.LENGTH_SHORT).show();
+//                    }
+//                    copy(tempUri);
+//                } else {
+//                    copy(intent.getData());
+//                }*/
         }
 
         handler.postDelayed(runnable, C.CLOSING_TIME);

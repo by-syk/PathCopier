@@ -18,7 +18,7 @@
             android:paddingBottom="@dimen/padding_content_dialog"
             android:paddingLeft="@dimen/padding_content_dialog"
             android:paddingRight="@dimen/padding_content_dialog"
-            style="@style/ripple"
+            style="@style/Ripple"
             android:visibility="gone" />
 
         <TextView
@@ -32,7 +32,7 @@
             android:paddingBottom="@dimen/padding_content_dialog"
             android:paddingLeft="@dimen/padding_content_dialog"
             android:paddingRight="@dimen/padding_content_dialog"
-            style="@style/ripple" />
+            style="@style/Ripple" />
 
     </RelativeLayout>
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     
-    <style name="app_theme" parent="@android:style/Theme.Dialog"/>
+    <style name="AppTheme" parent="@android:style/Theme.Dialog"/>
     
-    <style name="ripple">
+    <style name="Ripple">
         <item name="android:clickable">true</item>
         <item name="android:background">@android:drawable/list_selector_background</item>
     </style>

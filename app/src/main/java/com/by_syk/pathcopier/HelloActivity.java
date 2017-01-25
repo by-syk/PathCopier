@@ -34,7 +34,7 @@ public class HelloActivity extends Activity {
 
     @Override
     protected void onDestroy() {
-        ExtraUtil.hideComponent(this, getComponentName(), true);
+        //ExtraUtil.hideComponent(this, getComponentName(), true);
 
         super.onDestroy();
     }
